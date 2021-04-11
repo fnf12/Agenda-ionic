@@ -1,0 +1,47 @@
+<app-encabezado titulo= "Nuevo Horario"></app-encabezado>
+<ion-content>
+
+    <form #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
+        <ion-list>
+                <ion-item>
+                        <ion-label position="floating">Nombre Horario</ion-label>
+                        <ion-input required type="text"
+                                  name="nombre"
+                                  [(ngModel)]="horario.nombre">
+                        </ion-input>
+                    </ion-item>
+
+         <ion-item>
+            <ion-icon slot="start" name="calendar"></ion-icon>
+            <ion-label>Fecha inicio:</ion-label>
+            <ion-datetime 
+                    display-format="DD/MM/YYYY"
+                    pickerFormat="DD/MM/YYYY"
+                    [(ngModel)]="horario.inicio"
+                    name="inicio"
+                    max="2120">
+            </ion-datetime>
+         </ion-item>
+        
+         <ion-item>
+                <ion-icon slot="start" name="calendar"></ion-icon>
+                <ion-label>Fecha Fin:</ion-label>
+                <ion-datetime 
+                        display-format="DD/MM/YYYY"
+                        pickerFormat="DD/MM/YYYY"
+                        [(ngModel)]="horario.fin"
+                        name="fin"
+                        max="2120"
+                        >
+                </ion-datetime>
+        </ion-item>
+
+        </ion-list>
+        
+        <ion-button routerLink="/tabs/tab1" expand="full" type="submit"
+                [disabled]="formulario.invalid">
+            Guardar
+        </ion-button>
+
+    </form>
+</ion-content>

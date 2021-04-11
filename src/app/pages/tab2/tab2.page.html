@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary"> 
+
+      <ion-buttons slot="end">
+
+          <ion-button routerLink="/nuevo-examen">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </ion-button>
+
+    </ion-buttons>
+
+    <ion-title>
+      Examenes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <br/>
+    <ion-button class= hola fill= "outline" expand="block" (click)="registerNotification()">Ver Notificaiones</ion-button>
+    <ion-list lines="undefined">
+         <ion-item *ngFor="let examen of datalocal.Nexamen">
+           <ion-icon slot="start" color="primary" name="book"></ion-icon>
+           <ion-label>
+              <h2>{{examen.NomExa}}</h2>
+              <p>{{examen.Fecha | date:'dd/MM/yyyy'}}</p>
+           </ion-label>
+         </ion-item>
+
+    </ion-list>
+</ion-content>

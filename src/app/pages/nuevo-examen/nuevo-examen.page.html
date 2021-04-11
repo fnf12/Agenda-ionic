@@ -1,0 +1,34 @@
+<app-encabezado titulo= "Nuevo Examen"></app-encabezado>
+<ion-content>
+
+    <form #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
+        <ion-list>
+                <ion-item>
+                        <ion-label position="floating">Materia:</ion-label>
+                        <ion-input required type="text"
+                                  name="nombre"
+                                  [(ngModel)]="examen.nombre">
+                        </ion-input>
+                    </ion-item>
+
+         <ion-item>
+            <ion-icon slot="start" name="calendar"></ion-icon>
+            <ion-label>Fecha:</ion-label>
+            <ion-datetime 
+                    display-format="DD/MM/YYYY"
+                    pickerFormat="DD/MM/YYYY"
+                    [(ngModel)]="examen.fecha"
+                    name="inicio"
+                    max="2120">
+            </ion-datetime>
+         </ion-item>
+
+        </ion-list>
+        
+        <ion-button routerLink="/tab22" expand="full" type="submit"
+                [disabled]="formulario.invalid">
+            Guardar
+        </ion-button>
+
+    </form>
+</ion-content>

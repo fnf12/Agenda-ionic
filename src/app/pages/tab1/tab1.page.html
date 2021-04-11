@@ -1,0 +1,43 @@
+<ion-header no-border translucent>
+  <ion-toolbar color="primary">
+    
+      <ion-buttons slot="end">
+
+          <ion-button routerLink="/nuevo-horario">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </ion-button>
+          
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button (click)="mostrarPop( $event )">
+              <ion-icon name="help-circle-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+    
+    <ion-title class="ion-text-capitalize" > 
+      Horarios 
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <br>
+ <ion-label class=la>MIS HORARIOS:</ion-label>
+ <br/>
+  <ion-list lines="undefined">
+
+    <ion-item *ngFor="let registroHorario of datalocal.Hguardados"
+              (click)="abrirRegistro( registroHorario.InicioFecha, registroHorario.FinFecha, registroHorario.NombreHorario )"
+              detail >
+
+      <ion-icon slot="start" color="primary" name="calendar"></ion-icon>
+      <ion-label>
+      <h2>{{registroHorario.NombreHorario}}</h2>
+      <p>{{registroHorario.InicioFecha | date:'dd/MM/yyyy'}} - {{registroHorario.FinFecha | date:'dd/MM/yyyy'}}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

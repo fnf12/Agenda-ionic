@@ -1,0 +1,8 @@
+{
+  "name": "app01",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "aa14318d"
+}
